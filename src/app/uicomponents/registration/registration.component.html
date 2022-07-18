@@ -1,0 +1,18 @@
+<div style="text-align: center">
+  <h2>Registration</h2>
+  <form [formGroup]="form">
+    username: <input type="text" formControlName="usernameField" name="username"/>
+    <br>
+    password: <input type="password" formControlName="passwordField" name="password"/>
+    <br>
+    name: <input type="text" formControlName="nameField" name="name"/>
+    <br>
+    surname: <input type="text" formControlName="surnameField" name="surname"/>
+    <br>
+    address: <input type="text" formControlName="addressField" name="address"/>
+    <br>
+    phone: <input type="text" formControlName="phoneField" name="phone"/>
+    <br>
+    <button type="button" (click)="onSubmitPressed()">Signin</button>
+  </form>
+</div>

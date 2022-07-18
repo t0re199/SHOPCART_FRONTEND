@@ -1,0 +1,21 @@
+<div style="text-align: center">
+  <h2>Order</h2>
+  <div *ngIf="orderDetails != null && orderDetails.length > 0">
+    <ul>
+      <li *ngFor="let _orderDetail of orderDetails">
+        <app-order-detail-list-item (productRemovedFromCart)="onProductRemovedFromCart()" [orderDetail]="_orderDetail"></app-order-detail-list-item>
+      </li>
+    </ul>
+    <div>
+      <button (click)="onPlaceOrderPressed()">Place Order</button>
+    </div>
+  </div>
+  <div *ngIf="orderDetails == null || orderDetails.length === 0">
+    <br>
+    <br>
+    <h4>Empty Cart</h4>
+    <br>
+    <br>
+    <a routerLink="/productsList" routerLinkActive="active">Buy Something</a>
+  </div>
+</div>

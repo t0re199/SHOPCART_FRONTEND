@@ -1,0 +1,17 @@
+<div class="product-card">
+  <div class="product-card-thumbnail">
+    <img src="assets/image.png" height="180" width="180"/>
+  </div>
+  <h2 class="product-card-title"><a [routerLink]="['/product', product.id]">{{product.name}}</a></h2>
+  <span class="product-card-desc">{{product.description.substring(0, DESCRIPTION_LENGTH)}}...</span>
+  <br>
+  <span class="product-card-category">category: {{product.category.name}}</span>
+  <span class="product-card-price">{{product.price}}€</span>
+  <span *ngIf="currentAvailability> 0" class="product-card-aviability">[{{currentAvailability}} left]</span>
+  <div *ngIf="buyable">
+    <div class="product-card-colors">
+      <button *ngIf="currentAvailability > 0" (click)="onAddToCartPressed()">Add to Cart</button>
+      <h4 *ngIf="product.availability == 0">Temporary Unaviable!</h4>
+    </div>
+  </div>
+</div>

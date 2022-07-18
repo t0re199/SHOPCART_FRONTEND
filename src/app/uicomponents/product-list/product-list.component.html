@@ -1,0 +1,11 @@
+<div *ngIf="this.productList != null && this.productList.length > 0" style="text-align: center">
+  <h2>Products</h2>
+  <ul>
+    <li *ngFor="let _product of this.productList">
+      <app-product-list-item [product]="_product" [buyable]="buyable"></app-product-list-item>
+    </li>
+  </ul>
+</div>
+<div *ngIf="this.productList == null || this.productList.length === 0" style="text-align: center">
+  <h3>No product found on server!</h3>
+</div>

@@ -1,0 +1,16 @@
+<div style="text-align: center">
+  <div *ngIf="product" class="product-card">
+    <div class="product-card-thumbnail">
+      <img src="assets/image.png" height="200" width="200"/>
+    </div>
+    <h2 class="product-card-title">{{product.name}}</h2>
+    <span class="product-card-desc">{{product.description}}</span>
+    <span class="product-card-desc">category: {{product.category.name}}</span>
+    <span class="product-card-price">{{product.price}}€</span>
+    <span *ngIf="currentAvailability > 0" class="product-card-aviability">[{{currentAvailability}} left]</span>
+    <div class="product-card-colors">
+      <button *ngIf="currentAvailability > 0" (click)="onAddToCartPressed()">Add to Chart</button>
+      <h4 *ngIf="currentAvailability == 0">Temporary Unaviable!</h4>
+    </div>
+  </div>
+</div>

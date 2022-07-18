@@ -1,0 +1,19 @@
+<div style="text-align: center" *ngIf="!loggedIn">
+  <div>
+    <button type="button" (click)="onSignInPressed()">SignIn</button>
+  </div>
+  <div>
+    <h2>Login</h2>
+    <form [formGroup]="form">
+      username: <input type="text" formControlName="usernameField" name="username"/>
+      <br>
+      password: <input type="password" formControlName="passwordField" name="password"/>
+      <br>
+      <button type="button" (click)="onSubmitPressed()">Login!</button>
+    </form>
+  </div>
+</div>
+<div style="text-align: center" *ngIf="loggedIn">
+  <h3>You're already logged in!</h3>
+  <button (click) = 'onLogoutPressed()'>Logout!</button>
+</div>

@@ -1,0 +1,22 @@
+<div style="text-align: center" *ngIf="isOk">
+  <h1>
+    Order Successfully Placed!
+  </h1>
+  <a routerLink="/" routerLinkActive="active">Home Page</a>
+</div>
+
+<div style="text-align: center" *ngIf="!isOk">
+  <h1>
+    Order Cannot Be Placed!
+  </h1>
+  <br>
+  <br>
+  <div>
+    <h3>Error Description</h3>
+    Code: <span> {{ orderReponse.code }} </span>
+    <br>
+    Status: <span> {{ orderReponse.status }} </span>
+  </div>
+  <br>
+  <a routerLink="/" routerLinkActive="active">Home Page</a>
+</div>
